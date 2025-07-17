@@ -7,8 +7,10 @@
 size = Vector2(4, 4)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 3
+collision_mask = 0
 script = ExtResource("1_g2els")
+SPEED = 1200.09
+SHOOTINTERVAL = 0.065
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_g2els")

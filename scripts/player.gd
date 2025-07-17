@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 1200.0
-const SHOOTINTERVAL = 1. #s
+@export var SPEED = 1200.0
+@export var SHOOTINTERVAL = 1. #s
 
 const BULLET = preload("res://scenes/bullet.tscn")
 @onready var shootTimer: Timer = $Timer
@@ -36,7 +36,6 @@ func Shoot() -> void:
 	
 func Rotate() -> void:
 	var mousePos := get_global_mouse_position()
-	#print(mousePos)
 	rotate(get_angle_to(mousePos))
 	
 	
