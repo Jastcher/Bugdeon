@@ -41,18 +41,11 @@ func Rotate() -> void:
 	
 	
 func Move(delta: float) -> void:
-	var hDirection := Input.get_axis("left", "right")
-	if hDirection:
-		velocity.x = hDirection * SPEED * delta
+	var dirVector := Input.get_vector("left", "right", "up", "down")
+	if dirVector:
+		velocity = dirVector * SPEED * delta
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	var vDirection := Input.get_axis("up", "down")
-	if vDirection:
-		velocity.y = vDirection * SPEED * delta
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-		
+		velocity = Vector2(0,0)
 	move_and_slide()
 
 
