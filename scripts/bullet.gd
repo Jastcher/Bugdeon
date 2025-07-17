@@ -16,4 +16,5 @@ func _on_body_entered(body: Node2D) -> void:
 	print("bullet detects ", body.name)
 	if body.has_method("DealDamage"):
 		body.DealDamage(1)
-		queue_free()
+	queue_free()
+		
