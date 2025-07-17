@@ -6,16 +6,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf8s"]
 size = Vector2(2, 1)
 
-[node name="bullet" type="Area2D"]
-collision_mask = 6
+[node name="bullet" type="Node2D"]
 script = ExtResource("1_y25gk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_mkf8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mkf8s")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="area2D" to="." method="_on_area_2d_body_entered"]

@@ -42,6 +42,12 @@ right={
 
 sensors/canvas_textures/default_texture_filter=1
 
+[layer_names]
+
+2d_physics/layer_1="Collideable"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Projectile"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
