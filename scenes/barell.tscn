@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dehbql2alt0qm"]
+
+[ext_resource type="Texture2D" uid="uid://dlxy62v74d6qd" path="res://assets/barell.png" id="1_0lcyk"]
+[ext_resource type="Script" uid="uid://b5eacsrii5o1u" path="res://scripts/barell.gd" id="1_ff120"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff120"]
+size = Vector2(8, 8)
+
+[node name="barell" type="Node2D"]
+script = ExtResource("1_ff120")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0lcyk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ff120")
