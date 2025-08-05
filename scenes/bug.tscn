@@ -3,19 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://dvi5tif8rej74" path="res://assets/Bug.png" id="1_f31lg"]
 [ext_resource type="Script" uid="uid://b146sqb2txvik" path="res://scripts/bug.gd" id="1_sp1hu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp1hu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f31lg"]
 size = Vector2(8, 7)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sp1hu"]
 radius = 7.0
 
-[node name="bug" type="RigidBody2D"]
-collision_mask = 3
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 script = ExtResource("1_sp1hu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_sp1hu")
+shape = SubResource("RectangleShape2D_f31lg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_f31lg")
@@ -25,7 +26,3 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_sp1hu")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

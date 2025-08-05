@@ -43,12 +43,9 @@ tile_set = SubResource("TileSet_mu223")
 
 [node name="barell" parent="." instance=ExtResource("3_qpqen")]
 position = Vector2(-38, 11)
-maxHealth = 2
 
 [node name="barell2" parent="." instance=ExtResource("3_qpqen")]
 position = Vector2(-13, 18)
-maxHealth = 2
 
 [node name="barell3" parent="." instance=ExtResource("3_qpqen")]
 position = Vector2(8, -9)
-maxHealth = 2

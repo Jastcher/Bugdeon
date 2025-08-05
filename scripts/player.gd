@@ -11,6 +11,7 @@ var canShoot: bool = true
 
 func _ready() -> void:
 	shootTimer.wait_time = SHOOTINTERVAL
+	print(get_path())
 	
 	
 func _physics_process(delta: float) -> void:

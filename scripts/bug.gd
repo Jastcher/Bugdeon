@@ -5,12 +5,15 @@ extends RigidBody2D
 const SPEED = 4
 const MAXHEALTH = 5
 
-var health: int = MAXHEALTH
+var health :int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	max_contacts_reported = 1
 	contact_monitor = true
+	for child in get_tree().get_root().get_children():
+		print(child.name)
+	health = MAXHEALTH
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
