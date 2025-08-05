@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@onready var player: CharacterBody2D = %Player
+@onready var player: CharacterBody2D = get_node("/root/Node2D/Player")
 
 const SPEED = 4
 const MAXHEALTH = 5
@@ -11,9 +11,8 @@ var health :int
 func _ready() -> void:
 	max_contacts_reported = 1
 	contact_monitor = true
-	for child in get_tree().get_root().get_children():
-		print(child.name)
 	health = MAXHEALTH
+	print(get_path())
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
